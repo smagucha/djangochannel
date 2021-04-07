@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Get Text Input Field Value in JavaScript</title>
+</head>
+<body>
+	What chat room would you like to enter?<br>
+    <input type="text" size="100"  id="room-name-input">
+    <input id="room-name-submit" type="button" value="Enter">
+    <script>
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = roomName + '/';
+        };
+    </script>
+</body>
+</html>
+
+
