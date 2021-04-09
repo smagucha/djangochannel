@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from decouple import config
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -145,4 +146,6 @@ CHANNEL_LAYERS = {
 ASGI_APPLICATION = 'webchannel.asgi.application'
 
 
-# Channels
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'static')
+]
